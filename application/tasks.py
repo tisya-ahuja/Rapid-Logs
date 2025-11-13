@@ -50,15 +50,6 @@ def monthly_report():
 @shared_task(ignore_results = False, name = "delivery_update")
 def delivery_report(username):
     text = f"Hi {username}, your delivery status has been updated. Please check the app at http://127.0.0.1:5000"
-    response = requests.post("https://chat.googleapis.com/v1/spaces/AAAAGfF3foI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=gpn4rKlqCta9pKqgherO4fwknc0i4YMj06UkaRJW4CU", json = {"text": text})
+    response = requests.post("your google api link here", json = {"text": text})
     print(response.status_code)
     return "The delivery is sent to user"
-
-    
-    # https://chat.googleapis.com/v1/spaces/AAAAGfF3foI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=gpn4rKlqCta9pKqgherO4fwknc0i4YMj06UkaRJW4CU
-
-
-
-
-    # |||||||||||||||||||||||||||||||||||||||||| ---> 10 mins 
-    # |\\\\\\\\\\\\\\\\\\\|\\\\\\\\\\\\\\\\\\\\\ ---> with cache  
